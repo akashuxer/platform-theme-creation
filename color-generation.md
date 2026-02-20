@@ -8,6 +8,7 @@ This document describes how a **Theme Color Picker** generates color shades from
 
 1. [What You Need To Build](#1-what-you-need-to-build)
 2. [How It Works (Big Picture)](#2-how-it-works-big-picture)
+   - [What is HSL?](#21-what-is-hsl)
 3. [Data Flow & Pipeline](#3-data-flow--pipeline)
 4. [Conversion Algorithms](#4-conversion-algorithms)
 5. [Text Contrast Logic](#5-text-contrast-logic)
@@ -43,6 +44,24 @@ As a developer, you are responsible for:
 
 **Why HSL?**  
 Shade generation only changes lightness. Hue and saturation stay the same, so all shades stay in the same color family. This is simpler and more predictable than working in RGB.
+
+### 2.1 What is HSL?
+
+**HSL** stands for **Hue, Saturation, Lightness** — a color model that describes colors in human-friendly terms:
+
+| Component | Range | Meaning |
+|-----------|-------|---------|
+| **Hue (H)** | 0–360° | The base color on a circular color wheel. 0° = red, 120° = green, 240° = blue. Degrees map around the wheel (e.g. 60° = yellow, 300° = magenta). |
+| **Saturation (S)** | 0–100% | How vivid the color is. 0% = gray (no color), 100% = full, pure color. |
+| **Lightness (L)** | 0–100% | How light or dark. 0% = black, 50% = pure color, 100% = white. |
+
+**Intuition:**
+- **Hue** = *which* color (red, blue, etc.)
+- **Saturation** = *how strong* the color is (gray vs vivid)
+- **Lightness** = *how bright* it is (dark vs light)
+
+**Example:** `hsl(239, 89%, 64%)` = a mid-light indigo (hue 239°, very saturated, 64% lightness).  
+**Why we use it here:** To create shades, we keep H and S fixed and only vary L. That gives us a consistent color family (e.g. all indigos) from light to dark.
 
 ---
 
@@ -128,7 +147,7 @@ Result: 5 hex colors with the same hue and saturation, ordered light → dark.
 
 ---
 
-## 5. Text Contrast Logic
+## 5. Text Contrast Logic (WCAG)
 
 For each swatch background hex, you must choose either black (`#010101`) or white (`#FFFFFF`) so text is readable.
 
