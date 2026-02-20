@@ -1,0 +1,14 @@
+import { ThemeColorPicker } from './components/ThemeColorPicker';
+import './App.css';
+
+function App() {
+  return (
+    <div className="app">
+      <main className="app__main">
+        <ThemeColorPicker />
+      </main>
+    </div>
+  );
+}
+
+export default App;

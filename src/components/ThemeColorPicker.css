@@ -1,0 +1,188 @@
+.theme-picker {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.theme-picker__header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.theme-picker__title {
+  margin: 0 0 6px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.theme-picker__helper {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.theme-picker__primary {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.theme-picker__label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.theme-picker__primary-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme-picker__color-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.theme-picker__preview {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  flex-shrink: 0;
+  cursor: pointer;
+  padding: 0;
+  appearance: none;
+  background: none;
+}
+
+.theme-picker__hex-input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  font-size: 0.875rem;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #0f172a;
+}
+
+.theme-picker__hex-input::placeholder {
+  color: #94a3b8;
+}
+
+.theme-picker__hex-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.theme-picker__swatches {
+  padding: 20px 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.theme-picker__tile-wrap {
+  flex: 1;
+  min-width: 72px;
+  max-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-picker__tile {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.15s ease;
+  cursor: pointer;
+  padding: 0;
+  appearance: none;
+  background: none;
+}
+
+.theme-picker__tile:disabled {
+  cursor: not-allowed;
+}
+
+.theme-picker__tile-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.theme-picker__tile-hex {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 0.7rem;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #334155;
+  text-align: center;
+}
+
+.theme-picker__tile-hex::placeholder {
+  color: #94a3b8;
+}
+
+.theme-picker__tile-hex:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.theme-picker__tile-hex:disabled {
+  background: #f8fafc;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.theme-picker__code {
+  padding: 20px 24px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.theme-picker__code-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  margin: 0 0 12px 0;
+}
+
+.theme-picker__code-block {
+  margin: 0;
+  padding: 16px;
+  font-size: 0.8rem;
+  font-family: 'SF Mono', 'Fira Code', 'Monaco', monospace;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #334155;
+  overflow-x: auto;
+  line-height: 1.6;
+}
